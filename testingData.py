@@ -38,8 +38,8 @@ def getFakeData():
                                      coord=(37.2574, -79.9544), typical_range="typical_range",
                                      river="Roanoke River", town="Roanoke")
     NahuelHuapi = MonitoringStation(station_id="station_id", measure_id="measure_id", label="Mitre",
-                                     coord=(-41.1314, -71.2933), typical_range="typical_range",
-                                     river="Lago Nahuel Huapi", town="San Carlos de Bariloche")
+                                    coord=(-41.1314, -71.2933), typical_range="typical_range",
+                                    river="Lago Nahuel Huapi", town="San Carlos de Bariloche")
     JesusLock = MonitoringStation(station_id="station_id", measure_id="measure_id", label="Jesus Lock",
                                   coord=(52.2128, 0.1209), typical_range="typical_range",
                                   river="River Cam", town="Cambridge")
