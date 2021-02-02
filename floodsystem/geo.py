@@ -53,3 +53,12 @@ def stations_by_distance(stations, p):
     #distanceList must be sorted by distance
     #print(sorted_by_key(distanceList,1))
     return(sorted_by_key(distanceList,1))
+
+def stations_within_radius(stations, centre, r):
+    "List of stations within a given radius of a point"
+    stationList = []
+    for station in stations:
+        if haversine(station.coord, centre) < r:
+            stationList.append(station)
+    return(stationList)
+    
