@@ -44,7 +44,7 @@ def stations_by_distance(stations, p):
     #stations is a list of MonitoringStation objects and p a tuple of floats for the coordinate p
     for station in stations:
         distance=1
-        distanceList.append((station,haversine(p,station.coord)))
+        distanceList.append((station,round(haversine(p,station.coord),8)))
         #print(station.name)
         #print(station.town)
         #print(station.coord)
