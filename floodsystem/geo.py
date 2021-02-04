@@ -10,6 +10,7 @@ from .utils import sorted_by_key  # noqa
 
 #2/2/2021 implementing distance function
 def haversine(coord1: object, coord2: object):
+    # Spherical distance function
     import math
 
     # Coordinates in decimal degrees (e.g. 2.89078, 12.79797)
@@ -40,25 +41,36 @@ def haversine(coord1: object, coord2: object):
 
 
 def stations_by_distance(stations, p):
+    #returns stations by distancee and their distance as a list
     distanceList=[]
     #stations is a list of MonitoringStation objects and p a tuple of floats for the coordinate p
     for station in stations:
         distance=1
         distanceList.append((station,round(haversine(p,station.coord),8)))
-        #print(station.name)
-        #print(station.town)
-        #print(station.coord)
-        #print("\n")
-    #print(distanceList[0])
-    #distanceList must be sorted by distance
-    #print(sorted_by_key(distanceList,1))
     return(sorted_by_key(distanceList,1))
 
 def stations_within_radius(stations, centre, r):
-    "List of stations within a given radius of a point"
+    #List of stations within a given radius of a point
     stationList = []
     for station in stations:
         if haversine(station.coord, centre) < r:
             stationList.append(station)
     return(stationList)
-    
+
+def rivers_with_station(stations):
+    #A function that returns rivers with stations
+    rivers = set()
+    for station in stations:
+        rivers.add(station.river)
+    return(rivers)
+
+
+def stations_by_river(stations):
+    #Returns river dictionary
+    riverDict = {}
+    for station in stations:
+        if station.river not in riverDict:
+            riverDict[station.river] = []
+        riverDict[station.river].append(station)
+    return(riverDict)
+
