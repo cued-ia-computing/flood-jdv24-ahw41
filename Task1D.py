@@ -5,7 +5,6 @@ from floodsystem.geo import stations_by_river
 stations = build_station_list()
 riversWithStation = rivers_with_station(stations)
 print(len(riversWithStation), "stations. First 10 -", sorted(riversWithStation)[:10])
-#print(stations_by_river(stations)["River Cam"])
 aire = []
 cam = []
 thames = []
