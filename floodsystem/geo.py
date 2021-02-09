@@ -70,3 +70,12 @@ def stations_by_river(stations):
             riverDict[station.river] = []
         riverDict[station.river].append(station)
     return(riverDict)
+
+
+def rivers_by_station_number(stations, N):
+    rivers = rivers_with_station(stations)
+    riverStations = stations_by_river(stations)
+    riverCounts = []
+    for river in rivers:
+        riverCounts.append((len(riverStations[river]), river))
+    return [(x[1], x[0]) for x in sorted(riverCounts, reverse=True)[:N]]
