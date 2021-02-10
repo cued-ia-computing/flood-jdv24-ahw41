@@ -73,9 +73,9 @@ def stations_by_river(stations):
 
 
 def rivers_by_station_number(stations, N):
-    rivers = rivers_with_station(stations)
+    # Given stations and N, returns a tuple of N rivers and their number of stations
     riverStations = stations_by_river(stations)
     riverCounts = []
-    for river in rivers:
+    for river in rivers_with_station(stations):
         riverCounts.append((len(riverStations[river]), river))
     return [(x[1], x[0]) for x in sorted(riverCounts, reverse=True)[:N]]
