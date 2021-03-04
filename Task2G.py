@@ -46,13 +46,13 @@ def run():
     pairs = sorted(pairs, key=lambda x: x[0], reverse=True)
     for i in range(len(pairs)):
         if pairs[i][0] == "4":
-            print(str(pairs[i][1].name) + ": Severe Risk")
+            print(str(pairs[i][1].town) + ": Severe Risk")
         elif pairs[i][0] == "3":
-            print(str(pairs[i][1].name) + ": High Risk")
+            print(str(pairs[i][1].town) + ": High Risk")
         elif pairs[i][0] == "2":
-            print(str(pairs[i][1].name) + ": Moderate Risk")
+            print(str(pairs[i][1].town) + ": Moderate Risk")
         else:
-            print(str(pairs[i][1].name) + ": Low Risk")
+            print(str(pairs[i][1].town) + ": Low Risk")
 
 
 if __name__ == "__main__":
